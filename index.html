@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Tony Hoo | Your Neighbourhood Home Advisor">
+<meta property="og:description" content="Compare Klang Valley new launches, check your monthly instalment, and talk it through with Tony Hoo (REN 75480, IQI Realty).">
+<meta property="og:image" content="assets/tony.jpg">
+<meta property="og:type" content="website">
+<title>Tony Hoo | Your Neighbourhood Home Advisor</title>
+<meta name="description" content="Tony Hoo, your neighbourhood home advisor (REN 75480, IQI Realty) for new launches in Bukit Jalil and the Klang Valley. Compare projects, check your monthly instalment, and talk it through before you commit.">
+<style>
+/* Layout: same family as KL Projects Atlas + Home Loan Calculator. Sticky blurred nav, dark skyline hero band, theme-following sections below, cream calculator card, pill buttons. */
+:root{
+  --bg:#fffdf9; --bg-card:#ffffff; --bg-soft:#faf1de;
+  --ink:#1c1810; --ink-soft:#6b6152; --line:#ece4d2;
+  --gold:#b8862f; --gold-dark:#8a651b; --gold-text:#8a651b;
+  --calc-card:#eee2cc; --calc-field:#f4ecdd; --calc-ink:#332b1f; --calc-accent:#b5651d;
+  --wa:#25D366; --steel:#6e96e0; --red:#c0392b;
+  --nav-bg:rgba(255,253,249,.88);
+  --serif:'Times New Roman',Times,'Noto Serif',Georgia,serif;
+  --radius:16px; --radius-sm:10px;
+  --shadow:0 4px 24px rgba(28,24,16,.06); --shadow-lg:0 12px 40px rgba(28,24,16,.14);
+  --max:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#16130d;--bg-card:#211c13;--bg-soft:#2e2410;--ink:#f5efe1;--ink-soft:#c2b8a3;--line:#332b1c;--gold-text:#e3bd77;
+  --calc-card:#2a2317;--calc-field:#1c1810;--calc-ink:#f5efe1;--calc-accent:#e3a35e;--nav-bg:rgba(22,19,13,.88);--red:#f08a74;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#16130d;--bg-card:#211c13;--bg-soft:#2e2410;--ink:#f5efe1;--ink-soft:#c2b8a3;--line:#332b1c;--gold-text:#e3bd77;
+  --calc-card:#2a2317;--calc-field:#1c1810;--calc-ink:#f5efe1;--calc-accent:#e3a35e;--nav-bg:rgba(22,19,13,.88);--red:#f08a74;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font-family:var(--serif);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.container{max-width:var(--max);margin:0 auto;padding-inline:20px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0}
+.eyebrow{font-size:.95rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-text)}
+.num{font-variant-numeric:tabular-nums}
+.section{padding-block:64px}
+.section-head{display:grid;gap:8px;margin-bottom:28px;max-width:760px}
+.section-head h2{font-size:clamp(1.7rem,3.2vw,2.2rem)}
+.section-head p{color:var(--ink-soft);font-size:1.08rem}
+.pill-gold{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-text);background:var(--bg-soft);border:1px solid var(--gold);border-radius:99px;padding:3px 11px}
+.draft{border-style:dashed}
+
+/* buttons: copied from Atlas */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:99px;font:600 1.05rem var(--serif);border:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;text-decoration:none}
+.btn:active{transform:scale(.97)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 6px 20px rgba(37,211,102,.35)}
+.btn-wa:hover{box-shadow:0 8px 26px rgba(37,211,102,.45)}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 6px 20px rgba(184,134,47,.35)}
+.btn-gold:hover{box-shadow:0 8px 26px rgba(184,134,47,.45)}
+.btn-steel{background:var(--steel);color:#fff;box-shadow:0 6px 20px rgba(110,150,224,.35)}
+.btn-outline{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn-outline:hover{border-color:var(--gold)}
+.btn-sm{padding:8px 16px;font-size:.98rem}
+.text-link{color:var(--gold-text);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:var(--nav-bg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand-mark{width:42px;height:42px;flex:0 0 42px;border-radius:10px;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-weight:700;font-size:1.05rem;letter-spacing:.02em}
+.brand-title{font-weight:700;font-size:1rem;line-height:1.15}
+.brand-tagline{font-size:.85rem;color:var(--ink-soft);margin-top:1px}
+.nav-links{display:flex;gap:22px;font-size:1rem}
+.nav-links a{text-decoration:none;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--ink)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:38px;height:38px;border-radius:99px;border:1.5px solid var(--line);background:var(--bg-card);color:var(--ink);display:grid;place-items:center;cursor:pointer;font-size:1.05rem}
+.menu-btn{display:none}
+.mobile-nav{border-top:1px solid var(--line);padding-block:6px 14px}
+.mobile-nav a{display:block;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--line);font-size:1.1rem}
+@media (max-width:980px){.nav-links{display:none}.menu-btn{display:grid}}
+@media (max-width:560px){.brand-tagline{display:none}.nav-actions .btn-wa .lbl{display:none}}
+
+/* hero: dark skyline band in both themes, like the calculator header and Atlas dark hero */
+.hero{position:relative;overflow:hidden;color:#f5efe1;background:#16130d}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    radial-gradient(ellipse 90% 110% at 50% 45%, rgba(22,19,13,.15) 0%, rgba(22,19,13,.55) 62%, rgba(22,19,13,.92) 100%),
+    linear-gradient(to bottom, rgba(22,19,13,.55) 0%, rgba(22,19,13,.1) 30%, rgba(22,19,13,.35) 75%, #16130d 100%),
+    url('assets/skyline.jpg');
+  background-size:cover;background-position:center 40%;animation:slowZoom 18s ease-in-out infinite alternate}
+@keyframes slowZoom{from{transform:scale(1)}to{transform:scale(1.06)}}
+.hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding-block:64px 56px}
+.hero-copy{display:grid;gap:18px;min-width:0}
+.hero .eyebrow{color:#e3bd77;text-shadow:0 0 3px rgba(0,0,0,.85),0 0 8px rgba(0,0,0,.6)}
+.hero h1{font-size:clamp(2.3rem,5.2vw,3.6rem);line-height:1.06;text-shadow:0 0 4px rgba(0,0,0,.85),0 0 14px rgba(0,0,0,.65),0 0 28px rgba(0,0,0,.45)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lead{font-size:1.2rem;color:#f7f3ea;max-width:58ch;text-shadow:0 0 3px rgba(0,0,0,.85),0 0 10px rgba(0,0,0,.7)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.hero .btn-outline{color:#f5efe1;border-color:rgba(245,239,225,.45)}
+.hero-photo{justify-self:center;display:grid;gap:14px;justify-items:center;text-align:center}
+.portrait{width:clamp(200px,24vw,280px);aspect-ratio:1;max-width:100%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 5px #16130d,0 0 0 6px rgba(184,134,47,.55),0 18px 50px rgba(0,0,0,.6)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+.hero-photo .who{font-size:1.15rem;font-weight:600}
+.hero-photo .who small{display:block;font-weight:400;font-size:.92rem;color:#c2b8a3}
+.hero-stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-bottom:40px}
+.hero-stat{padding:14px;border:1px solid #3a3121;border-radius:var(--radius-sm);background:rgba(33,28,19,.82);text-align:center}
+.hero-stat .n{font-size:1.35rem;font-weight:600;color:#e3bd77}
+.hero-stat .l{font-size:.92rem;color:#c2b8a3}
+@media (max-width:860px){
+  .hero .container{grid-template-columns:1fr;text-align:center;padding-block:44px 36px;gap:30px}
+  .hero-photo{order:-1}
+  .hero .lead{margin-inline:auto}
+  .hero-cta{justify-content:center}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+}
+
+/* approach */
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.approach-grid{grid-template-columns:1fr}}
+.card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card h3{font-size:1.25rem;margin-bottom:6px}
+.card p{color:var(--ink-soft)}
+.card .ico{font-size:1.5rem;margin-bottom:10px;display:block}
+
+/* journey as a rail line */
+.journey{background:var(--bg-soft)}
+.line{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:16px;padding-top:34px}
+.line::before{content:"";position:absolute;top:9px;left:3%;right:3%;height:4px;border-radius:2px;background:var(--gold)}
+.stop{position:relative;display:grid;gap:6px;align-content:start;min-width:0}
+.stop::before{content:"";position:absolute;top:-32px;left:0;width:18px;height:18px;border-radius:50%;background:var(--bg);border:4px solid var(--gold)}
+.stop .k{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-text)}
+.stop h3{font-size:1.2rem}
+.stop p{font-size:.98rem;color:var(--ink-soft)}
+.stop a{font-size:.95rem;justify-self:start}
+@media (max-width:900px){
+  .line{grid-template-columns:1fr;padding-top:0;padding-left:36px;gap:26px}
+  .line::before{top:4px;bottom:4px;left:7px;right:auto;width:4px;height:auto}
+  .stop::before{top:3px;left:-36px}
+}
+
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:1000px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.pgrid{grid-template-columns:1fr}}
+.pcard{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:grid;gap:12px;align-content:start;box-shadow:var(--shadow);min-width:0}
+.pcard .top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pcard .area{font-size:.85rem;color:var(--ink-soft)}
+.badge{font-size:.78rem;font-weight:700;border-radius:99px;padding:3px 10px;background:var(--bg-soft);color:var(--gold-text);border:1px solid var(--line)}
+.pcard h3{font-size:1.3rem}
+.pcard dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0;font-size:.98rem;padding-top:10px;border-top:1px solid var(--line)}
+.pcard dt{color:var(--ink-soft)}
+.pcard dd{margin:0;text-align:right;font-weight:600}
+.pcard .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.note{margin-top:18px;font-size:.95rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+
+/* calculator preview: styled after the Integrated Home Loan Calculator */
+.calc{position:relative;overflow:hidden}
+.calc::before{content:"";position:absolute;inset:0;z-index:0;opacity:.14;background:url('assets/skyline2.jpg') center/cover;pointer-events:none}
+.calc .container{position:relative;z-index:1}
+.calc-card{background:var(--calc-card);color:var(--calc-ink);border-radius:var(--radius);padding:clamp(18px,3.5vw,30px);box-shadow:var(--shadow-lg);display:grid;gap:20px;max-width:900px}
+.calc-step{display:flex;gap:14px;align-items:flex-start}
+.calc-step .no{flex:0 0 auto;width:34px;height:34px;border-radius:8px;border:1.5px solid var(--gold);color:var(--gold-text);display:grid;place-items:center;font-weight:600;font-size:.95rem}
+.calc-step h3{font-size:1.3rem}
+.calc-step p{font-size:.98rem;opacity:.8}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:620px){.fields{grid-template-columns:1fr}}
+.f{display:grid;gap:6px;min-width:0}
+.f label{font-weight:600;font-size:1rem}
+.in{display:flex;align-items:stretch;border-radius:var(--radius-sm);overflow:hidden;background:var(--calc-field);border:1px solid transparent}
+.in:focus-within{border-color:var(--gold)}
+.in .chip{display:grid;place-items:center;padding:0 14px;background:rgba(184,134,47,.22);color:var(--gold-text);font-weight:600}
+.in input{flex:1;min-width:0;border:0;background:transparent;color:var(--calc-ink);font:600 1.15rem var(--serif);text-align:center;padding:12px 8px;font-variant-numeric:tabular-nums}
+.in input:focus{outline:none}
+.f input[type=range]{width:100%;accent-color:var(--gold)}
+.results{background:rgba(184,134,47,.1);border-radius:var(--radius-sm);padding:6px 18px}
+.results div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(184,134,47,.18);font-size:1.02rem}
+.results div:last-child{border-bottom:0}
+.results dt{font-weight:600;opacity:.8}
+.results dd{margin:0;font-weight:700}
+.results .hl dd{color:var(--calc-accent);font-size:1.7rem}
+.results .hl{align-items:center}
+.split{display:grid;gap:6px}
+.bar{display:flex;height:10px;border-radius:99px;overflow:hidden;background:rgba(184,134,47,.15)}
+.bar .p{background:var(--gold)}
+.bar .i{background:var(--calc-accent);opacity:.45}
+.legend{display:flex;gap:16px;font-size:.88rem;opacity:.8}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.disclaim{font-size:.88rem;opacity:.75}
+.err{font-size:.9rem;color:var(--red)}
+.calc-cta{display:flex;flex-wrap:wrap;gap:10px}
+
+/* story */
+.story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+@media (max-width:860px){.story-grid{grid-template-columns:1fr}}
+.placeholder{border:1.5px dashed var(--gold);border-radius:var(--radius);background:var(--bg-soft);padding:22px;display:grid;gap:10px}
+.placeholder ul{margin:0;padding-left:20px;color:var(--ink-soft);display:grid;gap:4px}
+
+/* testimonials: Atlas cards + photo strip */
+.testi{background:var(--bg-soft)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.tgrid{grid-template-columns:1fr}}
+.testi-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:12px;align-content:start}
+.stars{color:var(--gold);letter-spacing:2px}
+.testi-card p{font-size:1.08rem;color:var(--ink-soft);line-height:1.55}
+.testi-who{display:flex;align-items:center;gap:10px}
+.av{width:36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;font-weight:700}
+.testi-name{font-weight:700}
+.testi-loc{font-size:.9rem;color:var(--ink-soft)}
+.photos{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:22px}
+@media (max-width:860px){.photos{grid-template-columns:repeat(3,1fr)}}
+.photos figure{margin:0;display:grid;gap:6px;text-align:center}
+.photos img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;border:1px solid var(--line);display:block}
+.photos figcaption{font-size:.9rem;font-weight:600}
+
+/* social */
+.social-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media (max-width:860px){.social-grid{grid-template-columns:1fr}}
+.handles{display:grid;gap:12px}
+.handle{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;box-shadow:var(--shadow)}
+.handle:hover{border-color:var(--gold)}
+.handle b{font-size:1.2rem}
+.handle span{color:var(--ink-soft)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{aspect-ratio:9/14;border-radius:14px;border:1.5px dashed var(--line);background:var(--bg-soft);display:grid;place-items:end start;padding:12px;font-size:.88rem;color:var(--ink-soft)}
+
+/* contact */
+.contact{background:var(--bg-soft)}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.contact-side{display:grid;gap:16px}
+.contact-side h2{font-size:clamp(1.7rem,3.2vw,2.2rem)}
+.contact-side p{color:var(--ink-soft);font-size:1.08rem}
+.wa-box{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:10px;box-shadow:var(--shadow)}
+.wa-box .muted{font-size:.92rem;color:var(--ink-soft)}
+form.lead{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,3.5vw,28px);box-shadow:var(--shadow)}
+form.lead .full{grid-column:1/-1}
+@media (max-width:560px){form.lead{grid-template-columns:1fr}}
+form.lead label{display:grid;gap:6px;font-weight:600;font-size:1rem}
+form.lead .opt{font-weight:400;color:var(--ink-soft)}
+form.lead input,form.lead select,form.lead textarea{font:400 1.02rem var(--serif);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:11px 12px;width:100%;min-width:0}
+form.lead textarea{min-height:90px;resize:vertical}
+form.lead input:focus,form.lead select:focus,form.lead textarea:focus{outline:none;border-color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:inline-flex;align-items:center;gap:8px;font-weight:600;border:1.5px solid var(--line);border-radius:99px;padding:8px 14px;cursor:pointer}
+.chips label:has(input:checked){border-color:var(--gold);background:var(--bg-soft)}
+.chips input{width:auto!important;accent-color:var(--gold)}
+.consent{display:flex!important;align-items:flex-start;gap:10px!important;font-weight:400!important;font-size:.95rem!important;color:var(--ink-soft)}
+.consent input{width:auto!important;margin-top:5px;accent-color:var(--gold)}
+.form-msg{grid-column:1/-1;border:1.5px dashed var(--gold);border-radius:var(--radius-sm);background:var(--bg-soft);padding:14px;font-size:.98rem}
+.form-msg pre{white-space:pre-wrap;font:400 .95rem/1.5 var(--serif);margin:8px 0 0;color:var(--ink-soft)}
+
+/* privacy + footer */
+.privacy{padding-block:40px;border-top:1px solid var(--line)}
+.privacy p{color:var(--ink-soft);max-width:80ch}
+footer{background:#16130d;color:#f5efe1;padding-block:48px 110px}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+@media (max-width:860px){.foot{grid-template-columns:1fr}}
+footer h4{font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:#e3bd77;margin-bottom:10px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+footer a{text-decoration:none;color:#c2b8a3}
+footer a:hover{color:#f5efe1}
+.fine{grid-column:1/-1;font-size:.88rem;color:#a89d86;border-top:1px solid #332b1c;padding-top:18px;line-height:1.6}
+
+.wa-float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:none}
+@media (max-width:980px){.wa-float{display:inline-flex}}
+</style>
+</head>
+<body>
+
+
+<nav class="nav" aria-label="Main">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">TH</span>
+      <span><span class="brand-title">Tony Hoo | Your Neighbourhood Home Advisor</span><span class="brand-tagline" style="display:block">IQI Realty · Klang Valley New Launches · @tonyhoo_97</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#how">How I help</a>
+      <a href="#projects">Properties</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#stories">Stories</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch light or dark mode" title="Light / dark">🌓</button>
+      <a class="btn btn-wa btn-sm js-wa" href="#contact">💬<span class="lbl"> WhatsApp Tony</span></a>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <div class="container mobile-nav" id="mobileNav" hidden>
+    <a href="#about">About Tony</a><a href="#how">How I help</a><a href="#projects">Properties</a><a href="#calculator">Loan calculator</a><a href="#stories">Client stories</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main id="top">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <p class="eyebrow">📍 Bukit Jalil &amp; Klang Valley New Launches</p>
+        <h1>Finding your place in property <em>starts here.</em></h1>
+        <p class="lead">Whether it's your first home, your next upgrade or a long-term investment, I'll help you compare the projects, understand the real numbers and decide with a clear head. No pressure, just facts.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#projects">📊 Explore Properties</a>
+          <a class="btn btn-outline" href="#about">Get to Know Tony</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="portrait"><img src="assets/tony.jpg" alt="Tony Hoo, property advisor"></div>
+        <p class="who">Tony Hoo<small>REN 75480 · IQI Realty</small></p>
+      </div>
+    </div>
+    <div class="container hero-stats">
+      <div class="hero-stat"><div class="n">REN 75480</div><div class="l">Registered negotiator</div></div>
+      <div class="hero-stat"><div class="n">IQI Realty</div><div class="l">Agency</div></div>
+      <div class="hero-stat"><div class="n">Bukit Jalil</div><div class="l">Specialist area</div></div>
+      <div class="hero-stat"><div class="n">EN · 中文</div><div class="l">Languages</div></div>
+    </div>
+  </header>
+
+  <!-- APPROACH -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">My approach</p>
+        <h2>I'd rather you understand the numbers than rush into a booking.</h2>
+        <p>Transparent comparisons, better decisions. That's how I work with every buyer.</p>
+      </div>
+      <div class="approach-grid">
+        <div class="card"><span class="ico" aria-hidden="true">⚖️</span><h3>Compare before you commit</h3><p>Price, PSF, tenure, layouts and completion dates side by side, so you're not jumping between ads and brochures.</p></div>
+        <div class="card"><span class="ico" aria-hidden="true">🧮</span><h3>Know the full cost</h3><p>Down payment, rebates, legal fees, stamp duty and the monthly instalment, worked out before you visit a sales gallery.</p></div>
+        <div class="card"><span class="ico" aria-hidden="true">🤝</span><h3>Trade-offs, said plainly</h3><p>Every project has strengths and compromises. I'll tell you both and let you decide what matters for your situation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section class="section journey" id="how">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">How I help</p>
+        <h2>Clear guidance from first search to key collection.</h2>
+        <p>Each stop has a tool or a checklist behind it, so you always know what happens next.</p>
+      </div>
+      <div class="line">
+        <div class="stop"><span class="k">Stop 1</span><h3>Discover</h3><p>Budget, area, own stay or investment. We set your priorities first.</p></div>
+        <div class="stop"><span class="k">Stop 2</span><h3>Compare</h3><p>Every new launch side by side with real prices and PSF.</p><a class="text-link" href="https://kl-property-atlas-tonyhoo.netlify.app/" target="_blank" rel="noopener">KL Projects Atlas</a></div>
+        <div class="stop"><span class="k">Stop 3</span><h3>Calculate</h3><p>Instalment, upfront cash, rebates and a DSR estimate.</p><a class="text-link" href="https://tonyhoo-home-loan-calculator.netlify.app/" target="_blank" rel="noopener">Home Loan Calculator</a></div>
+        <div class="stop"><span class="k">Stop 4</span><h3>View</h3><p>Site visits with a checklist for layout, facing, parking and surroundings.</p></div>
+        <div class="stop"><span class="k">Stop 5</span><h3>Decide &amp; book</h3><p>Booking, loan application and SPA, step by step.</p></div>
+        <div class="stop"><span class="k">Stop 6</span><h3>Handover</h3><p>Key collection and defect checks. I stay with you after signing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Featured projects</p>
+        <h2>Projects I'm following closely right now.</h2>
+        <p>Live prices, PSF and availability are in the KL Projects Atlas, updated weekly from developer sales galleries.</p>
+      </div>
+      <div class="pgrid" id="pgrid"></div>
+      <div class="note"><span class="pill-gold draft">Draft</span><span>Project details to confirm before going live. Prices are left out here on purpose because they change often; the Atlas has the latest.</span></div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="section calc" id="calculator">
+    <div class="container" style="display:grid;gap:24px">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="eyebrow">Home loan calculator</p>
+        <h2>What would your monthly instalment be?</h2>
+        <p>A quick estimate. The full Integrated Home Loan Calculator also covers rebates, upfront cash and DSR.</p>
+      </div>
+      <div class="calc-card">
+        <div class="calc-step"><span class="no">01</span><div><h3>Property &amp; Financing</h3><p>Type in the price and loan margin. The loan amount, down payment and monthly instalment update automatically.</p></div></div>
+        <div class="fields">
+          <div class="f"><label for="price">Property Purchase Price</label><div class="in"><span class="chip">RM</span><input id="price" inputmode="numeric" value="650,000"></div><input type="range" id="priceR" min="200000" max="3000000" step="10000" value="650000" aria-label="Property price slider"></div>
+          <div class="f"><label for="margin">Loan Margin</label><div class="in"><input id="margin" inputmode="decimal" value="90"><span class="chip">%</span></div><input type="range" id="marginR" min="50" max="100" step="5" value="90" aria-label="Loan margin slider"></div>
+          <div class="f"><label for="rate">Interest Rate</label><div class="in"><input id="rate" inputmode="decimal" value="4.2"><span class="chip">%</span></div><input type="range" id="rateR" min="2" max="7" step="0.05" value="4.2" aria-label="Interest rate slider"></div>
+          <div class="f"><label for="tenure">Loan Tenure</label><div class="in"><input id="tenure" inputmode="numeric" value="35"><span class="chip">Years</span></div><input type="range" id="tenureR" min="5" max="35" step="1" value="35" aria-label="Loan tenure slider"></div>
+        </div>
+        <p class="err" id="calcErr" hidden></p>
+        <dl class="results num" aria-live="polite" style="margin:0">
+          <div><dt>Property Price</dt><dd id="oPrice">–</dd></div>
+          <div><dt>Estimated Loan Amount</dt><dd id="oLoan">–</dd></div>
+          <div><dt>Down Payment</dt><dd id="oDown">–</dd></div>
+          <div><dt>Total Interest</dt><dd id="oInt">–</dd></div>
+          <div class="hl"><dt>Monthly Instalment</dt><dd id="oMonthly">–</dd></div>
+        </dl>
+        <div class="split"><div class="bar" aria-hidden="true"><span class="p" id="barP"></span><span class="i" id="barI"></span></div><div class="legend"><span><i style="background:var(--gold)"></i>Principal</span><span><i style="background:var(--calc-accent);opacity:.45"></i>Interest</span></div></div>
+        <p class="disclaim">Illustrative estimate only, not a bank offer. Your actual rate, margin and approval depend on the bank and your profile.</p>
+        <div class="calc-cta">
+          <a class="btn btn-steel" href="https://tonyhoo-home-loan-calculator.netlify.app/" target="_blank" rel="noopener">🧮 Open Full Calculator</a>
+          <a class="btn btn-wa js-wa" href="#contact">💬 Talk Through My Budget</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section" id="story">
+    <div class="container story-grid">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="eyebrow">My story</p>
+        <h2>More than property. It's about the people behind every decision.</h2>
+      </div>
+      <div class="placeholder">
+        <span class="pill-gold draft" style="justify-self:start">Your words go here</span>
+        <p>Three or four short paragraphs in your own voice. Things worth covering:</p>
+        <ul>
+          <li>How you got into real estate, and why new launches</li>
+          <li>A buyer you helped who changed how you work</li>
+          <li>Why you built the Atlas and the calculator instead of just sending brochures</li>
+          <li>What buyers can expect from you, and what you won't do</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORIES -->
+  <section class="section testi" id="stories">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">💬 What buyers say</p>
+        <h2>From the buyers I've worked with.</h2>
+      </div>
+      <div class="tgrid">
+        <div class="testi-card"><div class="stars">★★★★★</div><p>"Having every project's pricing side by side saved me weeks of calling different sales galleries. Made my decision so much clearer."</p><div class="testi-who"><span class="av">L</span><div><div class="testi-name">Lawrence</div><div class="testi-loc">Bukit Jalil buyer</div></div></div></div>
+        <div class="testi-card"><div class="stars">★★★★★</div><p>"Tony was upfront about which units were sold out and which packages were actually worth it. No sales pressure, just facts."</p><div class="testi-who"><span class="av">F</span><div><div class="testi-name">Ms. Fong</div><div class="testi-loc">First-time buyer</div></div></div></div>
+        <div class="testi-card"><div class="stars">★★★★★</div><p>"The compare tool helped me and my wife narrow 8 projects down to 2 in one evening. Highly recommend before any viewing."</p><div class="testi-who"><span class="av">L</span><div><div class="testi-name">Mr. Lim &amp; family</div><div class="testi-loc">Investor, Bukit Jalil</div></div></div></div>
+      </div>
+      <div class="photos">
+        <figure><img src="assets/buyer-lawrence.jpg" alt="Tony with Lawrence" loading="lazy"><figcaption>Lawrence</figcaption></figure>
+        <figure><img src="assets/buyer-msfong.jpg" alt="Tony with Ms. Fong" loading="lazy"><figcaption>Ms. Fong</figcaption></figure>
+        <figure><img src="assets/buyer-mrlim.jpg" alt="Tony with Mr. Lim and family" loading="lazy"><figcaption>Mr. Lim &amp; family</figcaption></figure>
+        <figure><img src="assets/buyer-grace.jpg" alt="Tony with Grace" loading="lazy"><figcaption>Grace</figcaption></figure>
+        <figure><img src="assets/buyer-andy.jpg" alt="Tony with Andy" loading="lazy"><figcaption>Andy</figcaption></figure>
+        <figure><img src="assets/buyer-castieol.jpg" alt="Tony with Castieol" loading="lazy"><figcaption>Castieol</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section class="section">
+    <div class="container social-grid">
+      <div style="display:grid;gap:16px">
+        <div class="section-head" style="margin-bottom:0">
+          <p class="eyebrow">Let's connect beyond property</p>
+          <h2>Property tips, project walkthroughs and stories from the field.</h2>
+        </div>
+        <div class="handles">
+          <a class="handle" href="https://www.instagram.com/tonyhoo_97/" target="_blank" rel="noopener"><div><b>Instagram</b><br><span>@tonyhoo_97</span></div><span>Follow →</span></a>
+          <a class="handle" href="https://www.tiktok.com/@tonyhoo_97" target="_blank" rel="noopener"><div><b>TikTok</b><br><span>@tonyhoo_97</span></div><span>Watch →</span></a>
+        </div>
+      </div>
+      <div class="tiles" aria-label="Placeholder video covers"><div class="tile">Video cover 1</div><div class="tile">Video cover 2</div><div class="tile">Video cover 3</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-side">
+        <p class="eyebrow">Contact</p>
+        <h2>Have a question? Talk to Tony.</h2>
+        <p>No pressure and no obligation. Tell me what you're looking for and I'll come back with options that fit.</p>
+        <div class="wa-box">
+          <b style="font-size:1.25rem">Prefer WhatsApp?</b>
+          <span class="muted">Message me directly. I usually reply the same day.</span>
+          <a class="btn btn-wa js-wa" href="#contact" style="justify-self:start">💬 WhatsApp Tony Hoo</a>
+          <span class="muted" id="waNote"></span>
+        </div>
+      </div>
+      <form class="lead" id="leadForm" novalidate>
+        <label>Name<input id="fName" autocomplete="name"></label>
+        <label>Phone<input id="fPhone" type="tel" autocomplete="tel" placeholder="012-345 6789"></label>
+        <label class="full">Email <span class="opt">(optional)</span><input id="fEmail" type="email" autocomplete="email"></label>
+        <label>Preferred area<select id="fArea"><option>Bukit Jalil</option><option>Taman Desa / Old Klang Road</option><option>KL City</option><option>Petaling Jaya</option><option>Still exploring</option></select></label>
+        <label>Budget<select id="fBudget"><option>RM300k – RM500k</option><option selected>RM500k – RM700k</option><option>RM700k – RM1mil</option><option>RM1mil &amp; above</option><option>Not sure yet</option></select></label>
+        <div class="full" style="display:grid;gap:8px"><span style="font-weight:600">Purpose</span>
+          <div class="chips" role="radiogroup" aria-label="Purpose">
+            <label><input type="radio" name="purpose" value="Own stay" checked> Own stay</label>
+            <label><input type="radio" name="purpose" value="Investment"> Investment</label>
+            <label><input type="radio" name="purpose" value="Just exploring"> Just exploring</label>
+          </div>
+        </div>
+        <label class="full">Message <span class="opt">(optional)</span><textarea id="fMsg" placeholder="e.g. Looking for a 3-bedroom near the LRT, moving in by 2029"></textarea></label>
+        <label class="full consent"><input type="checkbox" id="fConsent"><span>I agree that Tony Hoo may contact me about my enquiry and use my details as described in the <a href="#privacy">privacy notice</a>.</span></label>
+        <p class="err full" id="formErr" hidden></p>
+        <button class="btn btn-gold full" type="submit" style="justify-self:start">Send My Enquiry</button>
+        <div class="form-msg" id="formMsg" hidden></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="privacy" id="privacy">
+    <div class="container" style="display:grid;gap:10px">
+      <p class="eyebrow">Privacy notice <span class="pill-gold draft" style="margin-left:8px">Draft wording</span></p>
+      <p>When you send an enquiry, I collect your name, phone number, email (if given), preferred area, budget and purpose. I use them only to reply to you and to share the property options you asked about. I don't sell your details or share them with third parties, except a developer or bank you ask me to connect you with. You can ask me to update or delete your details at any time. This notice will be reviewed against the Personal Data Protection Act 2010 and IQI's requirements before the site goes live.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div style="display:grid;gap:8px">
+      <b style="font-size:1.5rem">Tony Hoo</b>
+      <span style="color:#c2b8a3">Your Neighbourhood Home Advisor · Transparent Comparisons. Better Decisions.</span>
+      <span style="color:#c2b8a3">REN 75480 · IQI Realty</span>
+    </div>
+    <div><h4>Explore</h4><ul><li><a href="#about">About Tony</a></li><li><a href="#projects">Properties</a></li><li><a href="https://kl-property-atlas-tonyhoo.netlify.app/" target="_blank" rel="noopener">KL Projects Atlas</a></li><li><a href="https://tonyhoo-home-loan-calculator.netlify.app/" target="_blank" rel="noopener">Home Loan Calculator</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/tonyhoo_97/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@tonyhoo_97" target="_blank" rel="noopener">TikTok</a></li><li><a href="#privacy">Privacy notice</a></li></ul></div>
+    <p class="fine">This is the personal website of Tony Hoo (REN 75480), a real estate negotiator with IQI Realty [agency registration no. to add]. It is not the official website of any developer. Project information is for reference and may change without notice; please confirm the latest details before making a decision. Loan figures are illustrative estimates, not financing offers. © <span id="yr"></span> Tony Hoo.</p>
+  </div>
+</footer>
+
+<a class="btn btn-wa wa-float js-wa" href="#contact" aria-label="WhatsApp Tony">💬 WhatsApp</a>
+
+<script>
+/* ---------- Editable settings ---------- */
+const CONFIG = {
+  whatsappNumber: "",  // e.g. "60123456789". Empty = draft mode (buttons scroll to the form)
+  whatsappMessage: "Hi Tony, I visited your website and would like to explore some property options.",
+  atlasUrl: "https://kl-property-atlas-tonyhoo.netlify.app/"
+};
+const PROJECTS = [
+  {name:"The Queenswoodz", area:"Bukit Jalil", developer:"EXSIM", type:"Serviced residence", tenure:"Leasehold", status:"Selling"},
+  {name:"The Vividz", area:"Bukit Jalil", developer:"EXSIM", type:"Serviced residence", tenure:"To confirm", status:"Selling"},
+  {name:"Oaka Residences", area:"Bukit Jalil", developer:"Berjaya", type:"Condominium", tenure:"Freehold", status:"To confirm"},
+  {name:"Aetas", area:"Taman Desa", developer:"To confirm", type:"Condominium", tenure:"Freehold", status:"Selling"}
+];
+
+/* ---------- Theme toggle (same idea as the Atlas) ---------- */
+const root=document.documentElement;
+const isDark=()=>root.dataset.theme? root.dataset.theme==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+document.getElementById("themeBtn").addEventListener("click",()=>{root.dataset.theme=isDark()?"light":"dark";try{localStorage.setItem("th-theme",root.dataset.theme)}catch(e){}});
+try{const t=localStorage.getItem("th-theme");if(t)root.dataset.theme=t}catch(e){}
+
+/* ---------- Projects ---------- */
+document.getElementById("pgrid").innerHTML=PROJECTS.map(p=>`
+  <article class="pcard">
+    <div class="top"><span class="area">📍 ${p.area}</span><span class="badge">${p.status}</span></div>
+    <h3>${p.name}</h3>
+    <dl><dt>Developer</dt><dd>${p.developer}</dd><dt>Type</dt><dd>${p.type}</dd><dt>Tenure</dt><dd>${p.tenure}</dd><dt>Latest price</dt><dd>In the Atlas</dd></dl>
+    <div class="acts"><a class="btn btn-outline btn-sm" href="${CONFIG.atlasUrl}" target="_blank" rel="noopener">Compare</a><a class="btn btn-wa btn-sm js-ask" data-project="${p.name}" href="#contact">💬 Ask Tony</a></div>
+  </article>`).join("");
+
+/* ---------- WhatsApp ---------- */
+const waLink=m=>`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(m)}`;
+document.querySelectorAll(".js-wa").forEach(a=>{if(CONFIG.whatsappNumber){a.href=waLink(CONFIG.whatsappMessage);a.target="_blank";a.rel="noopener";}});
+document.querySelectorAll(".js-ask").forEach(a=>{const m=`Hi Tony, I'd like to know more about ${a.dataset.project}.`;
+  if(CONFIG.whatsappNumber){a.href=waLink(m);a.target="_blank";a.rel="noopener";}
+  else a.addEventListener("click",()=>{const f=document.getElementById("fMsg");if(!f.value)f.value=m;});});
+if(!CONFIG.whatsappNumber)document.getElementById("waNote").textContent="Draft: WhatsApp number not added yet, so the WhatsApp buttons scroll to the form for now.";
+
+/* ---------- Mobile menu ---------- */
+const menuBtn=document.getElementById("menuBtn"),mobileNav=document.getElementById("mobileNav");
+const setMenu=o=>{mobileNav.hidden=!o;menuBtn.setAttribute("aria-expanded",String(o));menuBtn.textContent=o?"✕":"☰";};
+menuBtn.addEventListener("click",()=>setMenu(mobileNav.hidden));
+mobileNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+
+/* ---------- Calculator ---------- */
+const rm=n=>"RM "+Math.round(n).toLocaleString("en-MY");
+const parse=v=>parseFloat(String(v).replace(/[^0-9.]/g,""));
+function monthlyPayment(P,ratePct,years){const n=years*12,r=ratePct/100/12;if(P<=0||n<=0)return 0;if(r===0)return P/n;return P*r/(1-Math.pow(1+r,-n));}
+const lim={price:[100000,20000000,"Property price must be between RM100,000 and RM20,000,000."],margin:[10,100,"Loan margin must be between 10% and 100%."],rate:[0,15,"Interest rate must be between 0% and 15%."],tenure:[1,35,"Loan tenure must be between 1 and 35 years."]};
+const el=id=>document.getElementById(id);
+function calc(){
+  const v={price:parse(el("price").value),margin:parse(el("margin").value),rate:parse(el("rate").value),tenure:parse(el("tenure").value)};
+  const bad=Object.keys(lim).find(k=>isNaN(v[k])||v[k]<lim[k][0]||v[k]>lim[k][1]);
+  const err=el("calcErr");
+  if(bad){err.textContent=lim[bad][2];err.hidden=false;return;}
+  err.hidden=true;
+  const loan=v.price*v.margin/100,down=v.price-loan,m=monthlyPayment(loan,v.rate,v.tenure),total=m*v.tenure*12,interest=total-loan;
+  el("oPrice").textContent=rm(v.price);el("oLoan").textContent=rm(loan)+` (${v.margin}%)`;el("oDown").textContent=rm(down);
+  el("oInt").textContent=rm(interest);el("oMonthly").textContent=rm(m);
+  const pp=total>0?loan/total*100:100;el("barP").style.width=pp+"%";el("barI").style.width=(100-pp)+"%";
+}
+[["price","priceR"],["margin","marginR"],["rate","rateR"],["tenure","tenureR"]].forEach(([i,r])=>{
+  const inp=el(i),rng=el(r);
+  rng.addEventListener("input",()=>{inp.value=i==="price"?Number(rng.value).toLocaleString("en-MY"):rng.value;calc();});
+  inp.addEventListener("input",()=>{const x=parse(inp.value);if(!isNaN(x))rng.value=x;calc();});
+  if(i==="price")inp.addEventListener("blur",()=>{const x=parse(inp.value);if(!isNaN(x))inp.value=Math.round(x).toLocaleString("en-MY");});
+});
+calc();
+
+/* ---------- Lead form (not connected yet: never fake a success) ---------- */
+el("leadForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const err=el("formErr"),msg=el("formMsg");
+  const name=el("fName").value.trim(),phone=el("fPhone").value.trim(),email=el("fEmail").value.trim();
+  let p="";
+  if(!name)p="Please enter your name.";
+  else if(phone.replace(/\D/g,"").length<9)p="Please enter a phone number I can reach you on.";
+  else if(email&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))p="That email address doesn't look right.";
+  else if(!el("fConsent").checked)p="Please tick the consent box so I can contact you.";
+  if(p){err.textContent=p;err.hidden=false;msg.hidden=true;return;}
+  err.hidden=true;
+  const purpose=document.querySelector('input[name="purpose"]:checked').value;
+  const s=`Name: ${name}\nPhone: ${phone}${email?"\nEmail: "+email:""}\nArea: ${el("fArea").value}\nBudget: ${el("fBudget").value}\nPurpose: ${purpose}${el("fMsg").value.trim()?"\nMessage: "+el("fMsg").value.trim():""}`;
+  msg.innerHTML="<strong>Draft preview: nothing was sent.</strong> Once connected, this goes to your Leads Google Sheet and the visitor sees a thank-you page. This is what it would deliver:";
+  const pre=document.createElement("pre");pre.textContent=s;msg.appendChild(pre);msg.hidden=false;
+});
+["fName","fPhone","fEmail","fConsent"].forEach(id=>el(id).addEventListener("input",()=>el("formErr").hidden=true));
+el("yr").textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>
