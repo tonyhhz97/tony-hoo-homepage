@@ -51,6 +51,53 @@ a.explore .go{color:var(--gold-text);font-weight:700;margin-top:4px}
 .cta-band h2{font-size:clamp(1.5rem,2.8vw,1.9rem)}
 .cta-band p{color:var(--ink-soft)}
 .cta-band .acts{display:flex;flex-wrap:wrap;gap:10px}
+
+/* ---------- motion + photo backgrounds (v3) ---------- */
+.page-hero::before{animation:bgSlowZoom 15s ease-in-out infinite alternate}
+.page-hero.ph-team::before{background-image:linear-gradient(to bottom,rgba(22,19,13,.72) 0%,rgba(22,19,13,.55) 50%,#16130d 100%),url('/assets/skyline2.jpg');background-position:center 30%}
+/* light-mode (and dark) photo backdrops: building / team, slowly moving, faded so text stays readable */
+.bgph{position:relative;isolation:isolate;overflow:hidden}
+.bgph::before{content:"";position:absolute;inset:-2%;z-index:-2;background-size:cover;background-position:center;opacity:.13;animation:bgSlowZoom 15s ease-in-out infinite alternate;pointer-events:none}
+.bgph::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to bottom,var(--bg) 0%,transparent 14%,transparent 86%,var(--bg) 100%)}
+.bg-city::before{background-image:url('/assets/skyline.jpg')}
+.bg-team::before{background-image:url('/assets/skyline2.jpg');background-position:center 35%}
+:root[data-theme="dark"] .bgph::before{opacity:.2}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bgph::before{opacity:.2}}
+/* hero stats: 4 across on desktop (the .hero .container grid rule was winning) */
+.hero .container.hero-stats{grid-template-columns:repeat(4,1fr);padding-block:0 40px;gap:10px}
+@media (max-width:860px){.hero .container.hero-stats{grid-template-columns:repeat(2,1fr)}}
+/* closing photo band */
+.cta-band{position:relative;isolation:isolate;overflow:hidden;background:#16130d;color:#f5efe1;border-top:0}
+.cta-band::before{content:"";position:absolute;inset:-2%;z-index:-2;background:linear-gradient(90deg,rgba(22,19,13,.82) 0%,rgba(22,19,13,.3) 100%),url('/assets/skyline2.jpg') center 38%/cover;animation:bgSlowZoom 15s ease-in-out infinite alternate}
+.cta-band p{color:#e6dcc6}
+.cta-band h2{text-shadow:0 0 12px rgba(0,0,0,.6)}
+.cta-band .btn-outline{color:#f5efe1;border-color:rgba(245,239,225,.5)}
+/* buttons: lift, light sweep, press, ripple */
+.btn{position:relative;overflow:hidden;isolation:isolate;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease,border-color .2s ease,background-color .2s ease}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:50%;z-index:-1;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);transition:left .6s ease}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover::after{left:130%}
+.btn:active{transform:translateY(0) scale(.97)}
+.btn-outline:hover{background:rgba(184,134,47,.12)}
+.btn .arr{display:inline-block;transition:transform .25s ease}
+.btn:hover .arr{transform:translateX(4px)}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:ripple .6s ease-out forwards;pointer-events:none;z-index:-1}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+.btn-gold{animation:goldPulse 3.2s ease-in-out infinite}
+@keyframes goldPulse{0%,100%{box-shadow:0 6px 20px rgba(184,134,47,.35)}50%{box-shadow:0 8px 28px rgba(184,134,47,.6)}}
+.btn-gold:hover{animation:none;box-shadow:0 12px 30px rgba(184,134,47,.5)}
+/* cards + links */
+.card,.handle,.pcard,a.explore{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,border-color .2s ease}
+.card:hover,.handle:hover,.pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--gold)}
+a.explore:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:10px;right:10px;bottom:2px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.nav-links a:hover::after{transform:scaleX(1)}
+.photos img{transition:transform .4s ease,box-shadow .4s ease}
+.photos figure:hover img{transform:scale(1.05) rotate(-1deg);box-shadow:var(--shadow-lg)}
+/* scroll reveal */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
 """
 
 HEAD_THEME = '<script>try{var t=localStorage.getItem("th-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>'
@@ -90,7 +137,7 @@ FOOTER = '''<footer>
       <span style="color:#c2b8a3">REN 75480 · IQI Realty</span>
     </div>
     <div><h4>Explore</h4><ul><li><a href="/about/">About Tony</a></li><li><a href="/services/">How I Help</a></li><li><a href="/properties/">Properties</a></li><li><a href="/calculator/">Loan Calculator</a></li><li><a href="/stories/">Client Stories</a></li><li><a href="/contact/">Contact</a></li></ul></div>
-    <div><h4>Tools &amp; social</h4><ul><li><a href="https://kl-property-atlas-tonyhoo.netlify.app/" target="_blank" rel="noopener">KL Projects Atlas</a></li><li><a href="https://tonyhoo-home-loan-calculator.netlify.app/" target="_blank" rel="noopener">Full Home Loan Calculator</a></li><li><a href="https://www.instagram.com/tonyhoo_97/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@tonyhoo_97" target="_blank" rel="noopener">TikTok</a></li><li><a href="/privacy/">Privacy notice</a></li></ul></div>
+    <div><h4>Tools &amp; social</h4><ul><li><a href="https://kl-property-atlas-tonyhoo.netlify.app/" target="_blank" rel="noopener">KL Projects Atlas</a></li><li><a href="https://tonyhoo-home-loan-calculator.netlify.app/" target="_blank" rel="noopener">Full Home Loan Calculator</a></li><li><a href="https://www.instagram.com/tonyhoo_97/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@tonyhoo_97" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.youtube.com/@tonyhoo97" target="_blank" rel="noopener">YouTube</a></li><li><a href="/privacy/">Privacy notice</a></li></ul></div>
     <p class="fine">This is the personal website of Tony Hoo (REN 75480), a real estate negotiator with IQI Realty [agency registration no. to add]. It is not the official website of any developer. Project information is for reference and may change without notice; please confirm the latest details before making a decision. Loan figures are illustrative estimates, not financing offers. © <span id="yr"></span> Tony Hoo.</p>
   </div>
 </footer>
@@ -237,8 +284,23 @@ PAGES = [  # (output path, nav path, <title>, meta description, body)
 ]
 
 
+def decorate(body, active):
+    n = [0]
+    def sec(m):
+        cls = m.group(1)
+        if any(k in cls for k in ("calc", "privacy", "cta-band")):
+            return m.group(0)
+        n[0] += 1
+        return f'<section class="{cls} bgph {"bg-city" if n[0] % 2 else "bg-team"}"'
+    body = re.sub(r'<section class="([^"]*)"', sec, body)
+    if active in ("/about/", "/stories/", "/contact/"):
+        body = body.replace('<header class="page-hero">', '<header class="page-hero ph-team">')
+    return body
+
+
 def render(path, active, title, desc, body):
     url = SITE_URL + active
+    body = decorate(body, active)
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -253,6 +315,7 @@ def render(path, active, title, desc, body):
 <meta property="og:url" content="{url}">
 <meta property="og:type" content="website">
 {HEAD_THEME}
+<script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>

@@ -95,4 +95,19 @@ if (el("leadForm")) {
   ["fName","fPhone","fEmail","fConsent"].forEach(id => el(id).addEventListener("input", () => el("formErr").hidden = true));
 }
 
+/* ---------- Motion: scroll reveal + button ripple ---------- */
+(() => {
+  const targets = document.querySelectorAll(".section-head, .card, .pcard, .handle, .tile, .photos figure, .hero-stat, .cta-band .container, .placeholder, .calc-card");
+  targets.forEach((t, i) => { t.classList.add("reveal"); t.style.setProperty("--d", ((i % 4) * 0.08) + "s"); });
+  if (!("IntersectionObserver" in window)) { targets.forEach(t => t.classList.add("in")); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const t = e.target; t.classList.add("in"); io.unobserve(t); setTimeout(() => t.classList.remove("reveal", "in"), 1100); } }), {threshold: .12});
+  targets.forEach(t => io.observe(t));
+  document.addEventListener("click", e => {
+    const b = e.target.closest(".btn"); if (!b) return;
+    const r = b.getBoundingClientRect(), d = Math.max(r.width, r.height), s = document.createElement("span");
+    s.className = "ripple"; s.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX - r.left - d / 2}px;top:${e.clientY - r.top - d / 2}px`;
+    b.appendChild(s); setTimeout(() => s.remove(), 650);
+  });
+})();
+
 el("yr").textContent = new Date().getFullYear();
