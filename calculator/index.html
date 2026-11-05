@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Home Loan Calculator Malaysia | Tony Hoo</title>
+<meta name="description" content="Estimate your monthly instalment, loan amount, down payment and total interest for a Malaysian property purchase.">
+<link rel="canonical" href="https://tonyhoo-homepage.netlify.app/calculator/">
+<meta property="og:title" content="Home Loan Calculator Malaysia | Tony Hoo">
+<meta property="og:description" content="Estimate your monthly instalment, loan amount, down payment and total interest for a Malaysian property purchase.">
+<meta property="og:image" content="https://tonyhoo-homepage.netlify.app/assets/tony.jpg">
+<meta property="og:url" content="https://tonyhoo-homepage.netlify.app/calculator/">
+<meta property="og:type" content="website">
+<script>try{var t=localStorage.getItem("th-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="container nav-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">TH</span>
+      <span><span class="brand-title">Tony Hoo | Your Neighbourhood Home Advisor</span><span class="brand-tagline" style="display:block">IQI Realty · Klang Valley New Launches · @tonyhoo_97</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/about/">About</a>
+      <a href="/services/">How I Help</a>
+      <a href="/properties/">Properties</a>
+      <a href="/calculator/" aria-current="page">Calculator</a>
+      <a href="/stories/">Stories</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch light or dark mode" title="Light / dark">🌓</button>
+      <a class="btn btn-wa btn-sm js-wa" href="/contact/">💬<span class="lbl"> WhatsApp Tony</span></a>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <div class="container mobile-nav" id="mobileNav" hidden>
+    <a href="/">Home</a><a href="/about/">About Tony</a><a href="/services/">How I help</a><a href="/properties/">Properties</a><a href="/calculator/" aria-current="page">Loan calculator</a><a href="/stories/">Client stories</a><a href="/contact/">Contact</a>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="page-hero">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a> / Loan Calculator</p>
+      <p class="eyebrow">Home loan calculator</p>
+      <h1>What would your monthly instalment be?</h1>
+      <p class="lead">A quick estimate. The full Integrated Home Loan Calculator also covers rebates, upfront cash and DSR.</p>
+    </div>
+  </header>
+
+  <section class="section calc" id="calculator">
+    <div class="container" style="display:grid;gap:24px">
+      <div class="calc-card">
+        <div class="calc-step"><span class="no">01</span><div><h3>Property &amp; Financing</h3><p>Type in the price and loan margin. The loan amount, down payment and monthly instalment update automatically.</p></div></div>
+        <div class="fields">
+          <div class="f"><label for="price">Property Purchase Price</label><div class="in"><span class="chip">RM</span><input id="price" inputmode="numeric" value="650,000"></div><input type="range" id="priceR" min="200000" max="3000000" step="10000" value="650000" aria-label="Property price slider"></div>
+          <div class="f"><label for="margin">Loan Margin</label><div class="in"><input id="margin" inputmode="decimal" value="90"><span class="chip">%</span></div><input type="range" id="marginR" min="50" max="100" step="5" value="90" aria-label="Loan margin slider"></div>
+          <div class="f"><label for="rate">Interest Rate</label><div class="in"><input id="rate" inputmode="decimal" value="4.2"><span class="chip">%</span></div><input type="range" id="rateR" min="2" max="7" step="0.05" value="4.2" aria-label="Interest rate slider"></div>
+          <div class="f"><label for="tenure">Loan Tenure</label><div class="in"><input id="tenure" inputmode="numeric" value="35"><span class="chip">Years</span></div><input type="range" id="tenureR" min="5" max="35" step="1" value="35" aria-label="Loan tenure slider"></div>
+        </div>
+        <p class="err" id="calcErr" hidden></p>
+        <dl class="results num" aria-live="polite" style="margin:0">
+          <div><dt>Property Price</dt><dd id="oPrice">–</dd></div>
+          <div><dt>Estimated Loan Amount</dt><dd id="oLoan">–</dd></div>
+          <div><dt>Down Payment</dt><dd id="oDown">–</dd></div>
+          <div><dt>Total Interest</dt><dd id="oInt">–</dd></div>
+          <div class="hl"><dt>Monthly Instalment</dt><dd id="oMonthly">–</dd></div>
+        </dl>
+        <div class="split"><div class="bar" aria-hidden="true"><span class="p" id="barP"></span><span class="i" id="barI"></span></div><div class="legend"><span><i style="background:var(--gold)"></i>Principal</span><span><i style="background:var(--calc-accent);opacity:.45"></i>Interest</span></div></div>
+        <p class="disclaim">Illustrative estimate only, not a bank offer. Your actual rate, margin and approval depend on the bank and your profile.</p>
+        <div class="calc-cta">
+          <a class="btn btn-steel" href="https://tonyhoo-home-loan-calculator.netlify.app/" target="_blank" rel="noopener">🧮 Open Full Calculator</a>
+          <a class="btn btn-wa js-wa" href="/contact/">💬 Talk Through My Budget</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container foot">
+    <div style="display:grid;gap:8px">
+      <b style="font-size:1.5rem">Tony Hoo</b>
+      <span style="color:#c2b8a3">Your Neighbourhood Home Advisor · Transparent Comparisons. Better Decisions.</span>
+      <span style="color:#c2b8a3">REN 75480 · IQI Realty</span>
+    </div>
+    <div><h4>Explore</h4><ul><li><a href="/about/">About Tony</a></li><li><a href="/services/">How I Help</a></li><li><a href="/properties/">Properties</a></li><li><a href="/calculator/">Loan Calculator</a></li><li><a href="/stories/">Client Stories</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><h4>Tools &amp; social</h4><ul><li><a href="https://kl-property-atlas-tonyhoo.netlify.app/" target="_blank" rel="noopener">KL Projects Atlas</a></li><li><a href="https://tonyhoo-home-loan-calculator.netlify.app/" target="_blank" rel="noopener">Full Home Loan Calculator</a></li><li><a href="https://www.instagram.com/tonyhoo_97/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@tonyhoo_97" target="_blank" rel="noopener">TikTok</a></li><li><a href="/privacy/">Privacy notice</a></li></ul></div>
+    <p class="fine">This is the personal website of Tony Hoo (REN 75480), a real estate negotiator with IQI Realty [agency registration no. to add]. It is not the official website of any developer. Project information is for reference and may change without notice; please confirm the latest details before making a decision. Loan figures are illustrative estimates, not financing offers. © <span id="yr"></span> Tony Hoo.</p>
+  </div>
+</footer>
+
+<a class="btn btn-wa wa-float js-wa" href="/contact/" aria-label="WhatsApp Tony">💬 WhatsApp</a>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

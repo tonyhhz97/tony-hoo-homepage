@@ -1,0 +1,32 @@
+  <section class="section calc" id="calculator">
+    <div class="container" style="display:grid;gap:24px">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="eyebrow">Home loan calculator</p>
+        <h2>What would your monthly instalment be?</h2>
+        <p>A quick estimate. The full Integrated Home Loan Calculator also covers rebates, upfront cash and DSR.</p>
+      </div>
+      <div class="calc-card">
+        <div class="calc-step"><span class="no">01</span><div><h3>Property &amp; Financing</h3><p>Type in the price and loan margin. The loan amount, down payment and monthly instalment update automatically.</p></div></div>
+        <div class="fields">
+          <div class="f"><label for="price">Property Purchase Price</label><div class="in"><span class="chip">RM</span><input id="price" inputmode="numeric" value="650,000"></div><input type="range" id="priceR" min="200000" max="3000000" step="10000" value="650000" aria-label="Property price slider"></div>
+          <div class="f"><label for="margin">Loan Margin</label><div class="in"><input id="margin" inputmode="decimal" value="90"><span class="chip">%</span></div><input type="range" id="marginR" min="50" max="100" step="5" value="90" aria-label="Loan margin slider"></div>
+          <div class="f"><label for="rate">Interest Rate</label><div class="in"><input id="rate" inputmode="decimal" value="4.2"><span class="chip">%</span></div><input type="range" id="rateR" min="2" max="7" step="0.05" value="4.2" aria-label="Interest rate slider"></div>
+          <div class="f"><label for="tenure">Loan Tenure</label><div class="in"><input id="tenure" inputmode="numeric" value="35"><span class="chip">Years</span></div><input type="range" id="tenureR" min="5" max="35" step="1" value="35" aria-label="Loan tenure slider"></div>
+        </div>
+        <p class="err" id="calcErr" hidden></p>
+        <dl class="results num" aria-live="polite" style="margin:0">
+          <div><dt>Property Price</dt><dd id="oPrice">–</dd></div>
+          <div><dt>Estimated Loan Amount</dt><dd id="oLoan">–</dd></div>
+          <div><dt>Down Payment</dt><dd id="oDown">–</dd></div>
+          <div><dt>Total Interest</dt><dd id="oInt">–</dd></div>
+          <div class="hl"><dt>Monthly Instalment</dt><dd id="oMonthly">–</dd></div>
+        </dl>
+        <div class="split"><div class="bar" aria-hidden="true"><span class="p" id="barP"></span><span class="i" id="barI"></span></div><div class="legend"><span><i style="background:var(--gold)"></i>Principal</span><span><i style="background:var(--calc-accent);opacity:.45"></i>Interest</span></div></div>
+        <p class="disclaim">Illustrative estimate only, not a bank offer. Your actual rate, margin and approval depend on the bank and your profile.</p>
+        <div class="calc-cta">
+          <a class="btn btn-steel" href="https://tonyhoo-home-loan-calculator.netlify.app/" target="_blank" rel="noopener">🧮 Open Full Calculator</a>
+          <a class="btn btn-wa js-wa" href="#contact">💬 Talk Through My Budget</a>
+        </div>
+      </div>
+    </div>
+  </section>

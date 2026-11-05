@@ -1,0 +1,34 @@
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-side">
+        <p class="eyebrow">Contact</p>
+        <h2>Have a question? Talk to Tony.</h2>
+        <p>No pressure and no obligation. Tell me what you're looking for and I'll come back with options that fit.</p>
+        <div class="wa-box">
+          <b style="font-size:1.25rem">Prefer WhatsApp?</b>
+          <span class="muted">Message me directly. I usually reply the same day.</span>
+          <a class="btn btn-wa js-wa" href="#contact" style="justify-self:start">💬 WhatsApp Tony Hoo</a>
+          <span class="muted" id="waNote"></span>
+        </div>
+      </div>
+      <form class="lead" id="leadForm" novalidate>
+        <label>Name<input id="fName" autocomplete="name"></label>
+        <label>Phone<input id="fPhone" type="tel" autocomplete="tel" placeholder="012-345 6789"></label>
+        <label class="full">Email <span class="opt">(optional)</span><input id="fEmail" type="email" autocomplete="email"></label>
+        <label>Preferred area<select id="fArea"><option>Bukit Jalil</option><option>Taman Desa / Old Klang Road</option><option>KL City</option><option>Petaling Jaya</option><option>Still exploring</option></select></label>
+        <label>Budget<select id="fBudget"><option>RM300k – RM500k</option><option selected>RM500k – RM700k</option><option>RM700k – RM1mil</option><option>RM1mil &amp; above</option><option>Not sure yet</option></select></label>
+        <div class="full" style="display:grid;gap:8px"><span style="font-weight:600">Purpose</span>
+          <div class="chips" role="radiogroup" aria-label="Purpose">
+            <label><input type="radio" name="purpose" value="Own stay" checked> Own stay</label>
+            <label><input type="radio" name="purpose" value="Investment"> Investment</label>
+            <label><input type="radio" name="purpose" value="Just exploring"> Just exploring</label>
+          </div>
+        </div>
+        <label class="full">Message <span class="opt">(optional)</span><textarea id="fMsg" placeholder="e.g. Looking for a 3-bedroom near the LRT, moving in by 2029"></textarea></label>
+        <label class="full consent"><input type="checkbox" id="fConsent"><span>I agree that Tony Hoo may contact me about my enquiry and use my details as described in the <a href="#privacy">privacy notice</a>.</span></label>
+        <p class="err full" id="formErr" hidden></p>
+        <button class="btn btn-gold full" type="submit" style="justify-self:start">Send My Enquiry</button>
+        <div class="form-msg" id="formMsg" hidden></div>
+      </form>
+    </div>
+  </section>
